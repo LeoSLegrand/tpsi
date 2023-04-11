@@ -13,19 +13,11 @@
 <body>
     <main>
         <?php
-        
         include('header.php')
-        
         ?>
 
         <?php
-        // DB Informations
-        $dbname = "tpsi";
-        $dbpass = "";
-        $dbuser = "root";
-        $dbip = "localhost";
-        // DB link
-        $bdd = new PDO("mysql:host=".$dbip.";dbname=".$dbname.";charset=utf8",$dbuser,$dbpass);
+        include('database.php')
         ?>
 
         <div class="formulaire">
@@ -67,10 +59,10 @@
 
 
         if (isset($_POST['submit'])) {
+            $username = $_REQUEST["username"];
+            $email = $_REQUEST["email"];
+            $password = $_REQUEST["password"];
             if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
-                $username = $_REQUEST["username"];
-                $email = $_REQUEST["email"];
-                $password = $_REQUEST["password"];
         
                 $secure_password = SHA1($password);
     

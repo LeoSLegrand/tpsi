@@ -22,7 +22,7 @@
         <div class="buttons">
             <?php
             
-            if (!empty($_SESSION['nom'])) {
+            if (!empty($_SESSION['email'])) {
                 echo '<div id="login"><a href="logout.php">Se déconnecter</a></div>';
                 echo '<div id="register"><a href="./dashboard/index.php">Tableau de bord</a></div>';
             } else {
