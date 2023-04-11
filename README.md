@@ -9,7 +9,7 @@ Installation :
 
 - If using Wamp base directory go to "C:\wamp64\www" and drop the folder "tpsi" into it
 
-- Open your browser and go to (http://localhost/phpmyadmin/) if you didn't change it the base username is "root" and the password is empty
+- Open your browser and go to  [PhpMyAdmin](http://localhost/phpmyadmin/) if you didn't change it the base username is "root" and the password is empty
 
 - Once logged in click **new** in the sidebar on your left as seen in the picture below
 
@@ -23,6 +23,6 @@ Installation :
 
 - Select the file "tpsi.sql" that is in the folder "tpsi" you used in the first step, go down the page and click **Import**
 
-- Now go to (http://localhost/tpsi)  
+- Now go to  [Website](http://localhost/tpsi)  
 
 - To login use : username = "Leo" | password = "1234"
