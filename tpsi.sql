@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `admin` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
@@ -42,8 +41,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `admin`) VALUES
-(1, 'Maxence', 'maxmahieux44@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 1),
-(6, 'Leo', 'leoselimlegrand@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 0);
+(1, 'Maxence', 'maxmahieux44@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(6, 'Leo', 'leoselimlegrand@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
