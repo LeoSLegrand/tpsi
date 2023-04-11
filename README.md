@@ -25,4 +25,4 @@ Installation :
 
 - Now go to (http://localhost/tpsi)  
 
-- To login use : username = "Leo" | password = "1234"
+- To login use : email = "leoselimlegrand@gmail.com" | password = "1234"
