@@ -10,6 +10,30 @@
 </head>
 <body>
     <main>
+        <?php
+        // DB Informations
+        $dbname = "tpsi";
+        $dbpass = "";
+        $dbuser = "root";
+        $dbip = "localhost";
+        // DB link
+        $bdd = new PDO("mysql:host=".$dbip.";dbname=".$dbname.";charset=utf8",$dbuser,$dbpass);
+        // Verification of login data
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            // Prevention of SQL injections
+            $stmt = $bdd->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
+            $stmt->execute([$username, sha1($password)]);
+            $user = $stmt->fetch();
+            if ($user) {
+                // Redirection to the home page if the data is correct
+                header('Location: test.php');
+            } else {
+                echo '<p class="error">Nom d\'utilisateur ou mot de passe incorrect !</p>';
+            }
+        }
+        ?>
         <div class="formulaire">
             <div class="container">
                 <div class="text">
