@@ -7,15 +7,11 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/form.css">
-    <title>Accueil</title>
+    <title>Tableau de bord</title>
 </head>
 <body>
     <main>
-        <?php
-        
-        require('header.php')
-    
-        ?>
+
     </main>
 </body>
 </html>

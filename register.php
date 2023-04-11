@@ -14,7 +14,7 @@
     <main>
         <?php
         
-        include('header.html')
+        include('header.php')
         
         ?>
 
@@ -42,19 +42,19 @@
                 <div class="username">
                     <label for="">Nom d'utilisateur</label>
                     <div>
-                        <input type="text" name="username" id="username" placeholder="Entrez votre nom d'utilisateur">
+                        <input type="text" name="username" id="username" placeholder="Entrez votre nom d'utilisateur" required>
                     </div>
                 </div>
                 <div class="email">
                     <label for="">Adresse email</label>
                     <div>
-                        <input type="email" name="email" id="email" placeholder="Entrez votre adresse mail">
+                        <input type="email" name="email" id="email" placeholder="Entrez votre adresse mail" required>
                     </div>
                 </div>
                 <div class="password">
                     <label for="">Mot de passe</label>
                     <div>
-                        <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe">
+                        <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required>
                         <p class="subtitle">Doit contenir au moins 8 caractères.</p>
                     </div>
                 </div>
@@ -68,7 +68,6 @@
 
         if (isset($_POST['submit'])) {
             if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
-
                 $username = $_REQUEST["username"];
                 $email = $_REQUEST["email"];
                 $password = $_REQUEST["password"];

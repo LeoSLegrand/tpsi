@@ -11,11 +11,8 @@
 </head>
 <body>
     <main>
-
         <?php
-        
-        include('header.html')
-        
+        require('header.php')
         ?>
         <?php
         // DB Informations
@@ -35,9 +32,8 @@
             $user = $stmt->fetch();
             if ($user) {
                 // Redirection to the home page if the data is correct
+                $_SESSION['nom'] = $username;
                 header('Location: index.php');
-                session_start();
-                $_SESSION["connect"] = true;
             } else {
                 echo '<p class="error">Nom d\'utilisateur ou mot de passe incorrect !</p>';
             }
@@ -57,13 +53,13 @@
                     <div class="username">
                         <label for="">Nom d'utilisateur</label>
                         <div>
-                            <input type="text" name="username" id="username" placeholder="Entrez votre nom d'utilisateur">
+                            <input type="text" name="username" id="username" placeholder="Entrez votre nom d'utilisateur" required>
                         </div>
                     </div>
                     <div class="password">
                         <label for="">Mot de passe</label>
                         <div>
-                            <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe">
+                            <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required>
                         </div>
                     </div>
                     <button type="submit" name="submit" id="submit">Se connecter</button>

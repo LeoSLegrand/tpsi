@@ -1,4 +1,9 @@
 <header id="header">
+    <?php
+
+    session_start();
+    
+    ?>
     <nav id="nav">
         <div class="links">
             <div>
@@ -15,17 +20,18 @@
             </div>
         </div>
         <div class="buttons">
-            <div id="login">
-                <a href="login.php">Se connecter</a>
-            </div>
-            <div id="register">
-                <a href="register.php">Créer un compte</a>
-            </div>
-        </div>
-        <div class="hamburger">
-            <button onclick="hamburger()" id="hamburger">
-                <img src="./assets/img/menu-hamburger.svg" alt="Icône menu hamburger" width="33px" height="auto">
-            </button>
+            <?php
+            
+            if (!empty($_SESSION['nom'])) {
+                echo '<div id="login"><a href="logout.php">Se déconnecter</a></div>';
+                echo '<div id="register"><a href="./dashboard/index.php">Tableau de bord</a></div>';
+            } else {
+                echo '<div id="login"><a href="login.php">Se connecter</a></div>';
+                echo '<div id="register"><a href="register.php">Créer un compte</a></div>';
+            }
+            
+            ?>
+
         </div>
         <div class="hsep">
 
