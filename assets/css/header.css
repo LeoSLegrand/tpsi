@@ -1,0 +1,186 @@
+/* Importation */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Général */
+
+:root {
+    --jaune: #FEC400;
+    --gris: #667085;
+    --grisclair: #EAECF0;
+}
+
+/* Header */
+
+nav {
+    padding: 24px 32px;
+    font-family: 'Inter', 'Arial';
+    font-weight: 600;
+    width: 100%;
+    height: 80px;
+    font-size: 16px;
+}
+
+
+.logo {
+    margin-right: 40px;
+    float: left;
+    transition-duration: 0.2s;
+}
+
+.logo:hover {
+    transition-duration: 0.2s;
+    transform: scale(1.2);
+}
+
+.links {
+    margin-top: 8px;
+    float: left;
+    display: flex;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--gris);
+    transition-duration: 0.2;
+}
+
+.links div {
+    transition-duration: 0.2s;
+}
+
+.links div:hover {
+    transition-duration: 0.2s;
+    transform: translateY(-0.2em);
+}
+
+.links div {
+    margin-right: 40px;
+}
+
+.buttons {
+    display: inline-flex;
+    margin-top: 8px;
+    float: right;
+}
+
+.buttons div a {
+    padding: 12px 16px;
+}
+
+.buttons #login a {
+    text-decoration: none;
+    border-radius: 4px;
+    color: var(--gris);
+    padding: 12px 16px;
+    background-color: white;
+    border: 2px solid var(--grisclair);
+    transition-duration: 0.2s;
+}
+
+.buttons #login a:hover {
+    transition-duration: 0.2s;
+    border: 2px solid var(--jaune);
+}
+
+.buttons #register a {
+    margin-left: 15px;
+    background-color: var(--jaune);
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid var(--jaune);
+}
+
+.hsep {
+    width: 100%;
+    height: 2px;
+    background-color: var(--grisclair);
+    position: relative;
+    top: 54px;
+}
+
+.hamburger {
+    display: none;
+    float: right;
+    margin-top: 7px;
+}
+
+.menuouvert {
+    
+}
+
+@media screen and (max-width: 975px) {
+
+    header {
+        position: absolute;
+        width: 100%;
+        height: 80px; /* Mettre 80px si la bannière d'alerte n'est pas présente */
+        background-color: white;
+        border-bottom: 2px solid var(--grisclair);
+        overflow: hidden;
+        z-index: 99;
+    }
+    
+    .links {
+        display: block;
+        flex-direction: column;
+        position: relative;
+        top: 20px;
+        width: 100%;
+    }
+
+    .links div {
+        padding: 15px 0;
+        margin: 1px 0;
+        width: 100%;
+    }
+
+    .links div a {
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+
+    .buttons {
+        display: block;
+        flex-direction: column;
+        position: relative;
+        top: 25px;
+        width: 100%;
+    }
+
+    .buttons #login {
+        position: relative;
+        border-radius: 4px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .buttons #login a {
+        width: 100%;
+        display: block;
+        padding: 16px 20px;
+    }
+
+    .buttons #register {
+        position: relative;
+        border-radius: 4px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .buttons #register a {
+        width: 100%;
+        display: block;
+        margin-left: 0;
+        padding: 16px 20px;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 32px;
+    }
+}

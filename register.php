@@ -13,6 +13,12 @@
 <body>
     <main>
         <?php
+        
+        include('header.html')
+        
+        ?>
+
+        <?php
         // DB Informations
         $dbname = "tpsi";
         $dbpass = "";
