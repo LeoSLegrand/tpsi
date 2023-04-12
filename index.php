@@ -7,15 +7,47 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/form.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Tableau de bord</title>
 </head>
 <body>
-    <main>
-        <?php
-        
-        require('header.php')
+    <?php
     
-        ?>
+    require('header.php');
+    require('./database.php');
+
+    //Requête DBB
+    $listage = $bdd -> query('SELECT * FROM blogs ORDER BY id');
+    
+    ?>
+
+    <main>
+        <div class="container">
+            <?php    
+                //Requête DBB
+                $listage = $bdd->query('SELECT * FROM blogs ORDER BY id DESC');
+                while ($list = $listage->fetch()) {
+                    echo '<div class="post-container">
+
+                            <div class="post">
+                            <div class="text">
+                                <div class="title">
+                                    <p>'.$list["titlePost"].'</p>
+                                </div>
+                                <div class="subtitle">
+                                    <p>'.$list["contentPost"].'</p>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="picture">
+                                    <img src="img/'.$list["imgName"].'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+                }
+            ?>
+        </div>
     </main>
 </body>
 </html>

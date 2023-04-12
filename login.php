@@ -15,7 +15,7 @@
         require('header.php')
         ?>
         <?php
-        include('database.php')
+        require('database.php')
         ?>
         <?php
         // Verification of login data

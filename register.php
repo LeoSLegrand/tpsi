@@ -57,7 +57,6 @@
         </div>
         <?php
 
-
         if (isset($_POST['submit'])) {
             $username = $_REQUEST["username"];
             $email = $_REQUEST["email"];
