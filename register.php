@@ -66,6 +66,7 @@
             $stmt = $bdd -> prepare('SELECT COUNT(email) FROM users WHERE email = ?');
             $stmt -> execute(array($email));
             $result = $stmt -> fetchColumn();
+            $creationDate = date('Y-m-d');
             
             if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
                 if ($pswd < 8) {
@@ -76,8 +77,8 @@
                     return;
                 } else {
                     $secure_password = SHA1($password);
-                    $listage = $bdd -> prepare('INSERT INTO `users` (`username`, `email`, `password`) VALUES (?, ?, ?)');
-                    $listage -> execute(array($username, $email, $secure_password));
+                    $listage = $bdd -> prepare('INSERT INTO `users` (`username`, `email`, `password`, `creationDate`) VALUES (?, ?, ?, ?)');
+                    $listage -> execute(array($username, $email, $secure_password, $creationDate));
                     header('Location: index.php');
                 }
             } else {

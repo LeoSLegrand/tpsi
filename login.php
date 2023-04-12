@@ -26,10 +26,13 @@
             $stmt = $bdd->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
             $stmt->execute([$email, sha1($password)]);
             $user = $stmt->fetch();
+            $lastConnection = date('Y-m-d');
             if ($user) {
                 // Redirection to the home page if the data is correct
                 $_SESSION['email'] = $email;
                 header('Location: index.php');
+                $listage = $bdd -> prepare('UPDATE `users` SET `lastConnection` = ? WHERE email = ?');
+                $listage -> execute(array($lastConnection, $email));
             } else {
                 echo '<p class="error">Nom d\'utilisateur ou mot de passe incorrect !</p>';
             }
