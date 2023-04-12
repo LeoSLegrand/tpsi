@@ -40,7 +40,7 @@
                     echo '<div class="post-container">
                             <div class="buttons">
                                 <a id="edit" href="edit.php">Modifier</a>
-                                <a id="delete" href="delete.php">Supprimer</a>
+                                <a id="delete" href="delete.php?id='.$list["id"].'">Supprimer</a>
                             </div>
                             <div class="post">
                             <div class="text">

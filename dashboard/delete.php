@@ -16,13 +16,14 @@
         ?>
         <?php
 
-        if (!empty($_SESSION['email'])) {
-            
-        } else {
-            header('location: ../index.php');
-        }
+        $id = $_GET["id"];
+
+        $stmt = $bdd->prepare('DELETE FROM blogs WHERE id = ?');
+        $stmt->execute([$id]);
+        $user = $stmt->fetch();
 
         ?>
+        
     </main>
 </body>
 </html>

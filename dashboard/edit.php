@@ -30,6 +30,9 @@
             // Redirige si la personne n'est pas connectée
             header('location: ../index.php');
         }
+
+        
+
         ?>
 
         <div class="formulaire">

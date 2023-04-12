@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 12 avr. 2023 à 07:41
+-- Généré le : mer. 12 avr. 2023 à 14:08
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -24,6 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `blogs`
+--
+
+DROP TABLE IF EXISTS `blogs`;
+CREATE TABLE IF NOT EXISTS `blogs` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `imgName` varchar(100) NOT NULL,
+  `titlePost` varchar(250) NOT NULL,
+  `contentPost` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -35,20 +50,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(50) NOT NULL,
   `creationDate` date NOT NULL,
   `lastConnection` date NOT NULL,
-  `connected` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `creationDate`, `lastConnection`, `connected`) VALUES
-(1, 'Maxence', 'maxmahieux44@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '0000-00-00', '0000-00-00', 0),
-(6, 'Leo', 'leoselimlegrand@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '0000-00-00', '0000-00-00', 0),
-(7, 'Evan', 'evan.suire@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '0000-00-00', '0000-00-00', 0),
-(31, 'Admin', 'contact@webask.fr', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', '0000-00-00', '0000-00-00', 0);
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `creationDate`, `lastConnection`) VALUES
+(82, 'Leo', 'leoselimlegrand@gmail.com', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', '2023-04-12', '0000-00-00'),
+(83, 'Maxence', 'maxmahieux44@gmail.com', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', '2023-04-12', '2023-04-12'),
+(90, 'Stephane', 'stephane.hervy@wiklog.fr', '95c062c37d05012db65565856869f6422181bc16', '2023-04-12', '0000-00-00');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
