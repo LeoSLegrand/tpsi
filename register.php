@@ -65,12 +65,13 @@
             $pswd = strlen($password);
             $stmt = $bdd -> prepare('SELECT COUNT(email) FROM users WHERE email = ?');
             $stmt -> execute(array($email));
+            $result = $stmt -> fetchColumn();
             
             if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
                 if ($pswd < 8) {
                     echo '<p class="error">Le mot de passe est trop court !</p>';
                     return;
-                } else if ($stmt = 1) {
+                } else if ($result > 0) {
                     echo '<p class="error">L\'email que vous avez saisie est déjà pris !</p>';
                     return;
                 } else {
