@@ -23,6 +23,6 @@ Installation :
 
 - Select the file "tpsi.sql" that is in the folder "tpsi" you used in the first step, go down the page and click **Import**
 
-- Now go to (http://localhost/tpsi)  
+- Now go to your [website](http://localhost/tpsi)  
 
-- To login use : username = "Leo" | password = "1234"
+- To login use : email = "leoselimlegrand@gmail.com" | password = "1234"

@@ -62,13 +62,23 @@
             $username = $_REQUEST["username"];
             $email = $_REQUEST["email"];
             $password = $_REQUEST["password"];
+            $pswd = strlen($password);
+            $stmt = $bdd -> prepare('SELECT COUNT(email) FROM users WHERE email = ?');
+            $stmt -> execute(array($email));
+            
             if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
-        
-                $secure_password = SHA1($password);
-    
-                $listage = $bdd->prepare('INSERT INTO `users` (`username`, `email`, `password`) VALUES (?, ?, ?)');
-                $listage -> execute(array($username, $email, $secure_password));
-                header('Location: index.php');
+                if ($pswd < 8) {
+                    echo '<p class="error">Le mot de passe est trop court !</p>';
+                    return;
+                } else if ($stmt = 1) {
+                    echo '<p class="error">L\'email que vous avez saisie est déjà pris !</p>';
+                    return;
+                } else {
+                    $secure_password = SHA1($password);
+                    $listage = $bdd -> prepare('INSERT INTO `users` (`username`, `email`, `password`) VALUES (?, ?, ?)');
+                    $listage -> execute(array($username, $email, $secure_password));
+                    header('Location: index.php');
+                }
             } else {
                 echo 'Champs incorrects';
             }

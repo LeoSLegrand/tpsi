@@ -49,7 +49,7 @@
                     <div class="email">
                         <label for="">Adresse mail</label>
                         <div>
-                            <input type="text" name="email" id="email" placeholder="Entrez votre nom d'utilisateur" required>
+                            <input type="text" name="email" id="email" placeholder="Entrez votre adresse mail" required>
                         </div>
                     </div>
                     <div class="password">
